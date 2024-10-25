@@ -1,0 +1,172 @@
+body {
+    font-family: sans-serif;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: #f0ffff;
+}
+
+h1 {
+    font-size: 4em;
+    text-align: center;
+    color: #ff9100;
+}
+
+
+/* O pseudoelemento before(antes) cria um elemento "antes" do h1 */
+/* h1::before {
+    content: "Tema:";
+    color: #070706;
+} */
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 85px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #070706;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
+    color: #ff9100;
+    background-color: #b5b5b585;
+    border: #070706;
+}
+
+nav ul li a:active {
+    background-color: #ffee00;
+    color: #070706;
+}
+
+nav ul li a:visited {
+    background-color: #6a0b64;
+}
+
+h2 {
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+p {
+    font-size: 2em;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+
+.paragrafo::first-letter {
+    color: #ff9100;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+.paragrafo::selection {
+    background-color: #070706;
+    color: azure;
+}
+
+.container {
+    margin: 50px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    height: 400px;
+}
+
+/* magia maligina (sem isso o grid não tava funcionando)*/
+.img3
+/* fim da magia */
+
+.card {
+    display: grid;
+    grid-template-columns: 400px 200px 200px;
+    grid-auto-flow: 250px;
+    gap: 15px;
+    /* max-width: 50%; */
+}
+
+.vertical {
+    grid-row: span 2;
+}
+
+.horinzontale {
+    grid-column: span 2;
+}
+
+.textbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.footer {
+    /* top | right | bottom | left */
+    margin: 20px 0px 2px 0px;
+    font-size: 1.2em;
+}
+
+
+@media(max-width:768px) {
+
+    h1 {
+        font-size: 2.5em;
+        text-align: center;
+        color: #ff9100;
+    }
+
+    h2{
+        font-size: 3em;
+    }
+
+    nav ul li {
+        margin: auto;
+    }
+
+    p {
+        text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 1.8em;
+    }
+
+    .card {
+        display: grid;
+        grid-template-columns: 0px 0px 100px;
+        grid-auto-flow: 250px;
+        /* gap: 15px; */
+        max-width: 50%;
+    }
+
+    .horinzontal{
+        padding-right: 26px;
+    }
+
+    img {
+        height: 300px;
+        margin-right: 10%;
+    }
+
+    .footer{
+        text-align: center;
+    }
+
+}
