@@ -1,3 +1,30 @@
+@font-face {
+    font-family: darkcastle;
+    src: url(fonts/darkcastle/Darkcastle_PERSONAL_USE_ONLY.otf);
+}
+
+@font-face {
+    font-family: midnight-blackfire ;
+    src: url(fonts/midnight-blackfire/Midnight\ Blackfire.otf);
+}
+
+@font-face {
+    font-family: miguel-de-northern;
+    src: url(fonts/miguel-de-northern/Miguel\ De\ Northern.ttf);
+}
+
+@font-face {
+    font-family: witcher-kinight;
+    src: url(fonts/witcher-kinight/Witcher\ Knight.ttf);
+}
+
+@font-face {
+    font-family: rich;
+    src: url(fonts/rich/rich.otf);
+}
+
+/* ------------------------------------------------------------------------------------------------- */
+
 body {
     font-family: sans-serif;
 
@@ -8,10 +35,18 @@ body {
     background-color: #f0ffff;
 }
 
+section{
+    margin-left: -20px;
+}
+
 h1 {
-    font-size: 4em;
+    font-size: 6em;
     text-align: center;
-    color: #ff9100;
+    /* color: #ff9100; */
+    color: #5dc7c7;
+    font-family: rich ;
+    background-color: #000000;
+
 }
 
 
@@ -21,12 +56,19 @@ h1 {
     color: #070706;
 } */
 
+header{
+    margin-top: -42.80px;
+    padding-top: 20px;
+    background-color: #000000;
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
+    background-color: #000000;
 }
 
 nav ul li {
@@ -35,16 +77,19 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: aliceblue;
+    color: #f0f8ff;
     background-color: #070706;
     padding: 10px;
     border-radius: 8px;
+    border: solid #5dc7c7;
+    font-family: midnight-blackfire ;
 }
 
 nav ul li a:hover {
-    color: #ff9100;
-    background-color: #b5b5b585;
+    color: #000000;
+    background-color: #b5b5b5fd;
     border: #070706;
+    border: solid #f78c00;
 }
 
 nav ul li a:active {
@@ -57,16 +102,18 @@ nav ul li a:visited {
 }
 
 h2 {
-    font-size: 4em;
+    font-size: 7em;
     text-align: center;
     margin-bottom: 0px;
+    font-family: miguel-de-northern;
+    color: #f78c00;
 }
 
 p {
     font-size: 2em;
     text-align: center;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 5%;
 }
 
 
@@ -78,38 +125,42 @@ p {
 
 .paragrafo::selection {
     background-color: #070706;
-    color: azure;
+    color: #f0ffff;
 }
 
 .container {
     margin: 50px 30px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 
-img {
-    height: 400px;
-}
-
-/* magia maligina (sem isso o grid não tava funcionando)*/
-.img3
-/* fim da magia */
-
-.card {
-    display: grid;
-    grid-template-columns: 400px 200px 200px;
-    grid-auto-flow: 250px;
-    gap: 15px;
-    /* max-width: 50%; */
+.mediaC{
+    flex-direction: row-reverse;
 }
 
 .vertical {
-    grid-row: span 2;
+    height: 370px;
 }
 
-.horinzontale {
-    grid-column: span 2;
+.horizontal {
+    height: 370px;
+    width: 600px;
 }
+
+.imagem{
+    border: 4mm ridge #000000;
+}
+
+
+
+.card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, 400px );  
+    gap: 10px; 
+    padding: 10px;
+}
+
 
 .textbox {
     display: flex;
@@ -124,49 +175,84 @@ img {
     font-size: 1.2em;
 }
 
+/* --------------------------------------------------------------------------------------- */
 
 @media(max-width:768px) {
+    
+    nav ul {
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: -100px;
+    }
+    
+    nav ul li a {
+       font-size: 0.7em;
+    }
 
-    h1 {
+    h1{
         font-size: 2.5em;
-        text-align: center;
-        color: #ff9100;
     }
 
     h2{
-        font-size: 3em;
-    }
-
-    nav ul li {
-        margin: auto;
-    }
-
-    p {
+        font-size: 4em;
+        margin-top: 20px;
         text-align: center;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 1.8em;
+        margin-left: 20%;
     }
 
-    .card {
-        display: grid;
-        grid-template-columns: 0px 0px 100px;
-        grid-auto-flow: 250px;
-        /* gap: 15px; */
-        max-width: 50%;
+    p{
+        font-size: 1.3em;
+        margin-left: 25%;
     }
 
-    .horinzontal{
-        padding-right: 26px;
+    .container{
+        flex-direction: column;
+    }
+    
+
+    .vertical{
+        width: 270px;
     }
 
-    img {
-        height: 300px;
-        margin-right: 10%;
+    .horizontal{
+
     }
 
-    .footer{
-        text-align: center;
+    section{
+        margin-left: -20%;
+    }
+
+    img{
+        width: 350px;
+    }
+
+    .imagem{
+        margin-right: -45%;
+    }
+
+    .img1{
+        /* display: none; */
+    }
+
+    .img2{
+        display: none;
+    }
+
+    .img3{
+        display: none;
+    }
+
+    .img4{
+        display: none;
+    }
+
+    .card{
+        grid-template-rows: repeat(1, 400px );  
+        grid-template-columns: repeat(1, 1fr);
+        /* margin-left: 3%; */
     }
 
 }
